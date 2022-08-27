@@ -11,6 +11,7 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^1.0.2",
     "erc721a": "^4.2.2",
+    "erc721psi": "^0.6.1",
     "hardhat": "^2.10.2"
   },
   "dependencies": {

@@ -1,8 +1,10 @@
 const { ethers } = require("hardhat");
 
+const TOTAL_QUANTITY = 11;
+
 describe("OpenZeppelin ERC721Enumerable", function () {
     it(`can batch mint`, async function () {
-        for (let i = 1; i < 11; i++) {
+        for (let i = 1; i < TOTAL_QUANTITY; i++) {
             // Initialize the OpenZeppelin ERC721Enumerable Contract.
             const erc721 = await initializeContract("DemoErc721");
 
@@ -18,27 +20,9 @@ describe("OpenZeppelin ERC721Enumerable", function () {
     });
 });
 
-describe("Azuki ERC721A", function () {
-    it(`can batch mint`, async function () {
-        for (let i = 1; i < 11; i++) {
-            // Initialize the Azuki Contract.
-            const erc721a = await initializeContract("DemoErc721A");
-
-            // Simulate a user wallet.
-            const [_, addr1] = await ethers.getSigners();
-
-            // Batch mint and log gas costs.
-            // await mintAndLogGas(erc721a, addr1, i);
-            const mintTx = await erc721a.connect(addr1).mint(i);
-            const mintTxnResponse = await mintTx.wait();
-            console.log(`\tgas to mint ${i}:`, mintTxnResponse.gasUsed.toString());
-        }
-    });
-});
-
 describe("OpenZeppelin ERC1155", function () {
     it(`can batch mint`, async function () {
-        for (let i = 1; i < 11; i++) {
+        for (let i = 1; i < TOTAL_QUANTITY; i++) {
             // Initialize the OpenZeppelin ERC1155 Contract.
             const erc1155 = await initializeContract("DemoErc1155");
 
@@ -55,7 +39,41 @@ describe("OpenZeppelin ERC1155", function () {
     });
 });
 
+describe("Azuki ERC721A", function () {
+    it(`can batch mint`, async function () {
+        for (let i = 1; i < TOTAL_QUANTITY; i++) {
+            // Initialize the Azuki Contract.
+            const erc721a = await initializeContract("DemoErc721A");
 
+            // Simulate a user wallet.
+            const [_, addr1] = await ethers.getSigners();
+
+            // Batch mint and log gas costs.
+            // await mintAndLogGas(erc721a, addr1, i);
+            const mintTx = await erc721a.connect(addr1).mint(i);
+            const mintTxnResponse = await mintTx.wait();
+            console.log(`\tgas to mint ${i}:`, mintTxnResponse.gasUsed.toString());
+        }
+    });
+});
+
+describe("ERC721Psi", function () {
+    it(`can batch mint`, async function () {
+        for (let i = 1; i < TOTAL_QUANTITY; i++) {
+            // Initialize the ERC721Psi Contract.
+            const erc721psi = await initializeContract("DemoERC721Psi");
+
+            // Simulate a user wallet.
+            const [_, addr1] = await ethers.getSigners();
+
+            // Batch mint and log gas costs.
+            // await mintAndLogGas(erc721a, addr1, i);
+            const mintTx = await erc721psi.connect(addr1).mint(i);
+            const mintTxnResponse = await mintTx.wait();
+            console.log(`\tgas to mint ${i}:`, mintTxnResponse.gasUsed.toString());
+        }
+    });
+});
 
 const initializeContract = async (contract) => {
     const contractFactory = await ethers.getContractFactory(contract);
