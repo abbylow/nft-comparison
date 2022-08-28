@@ -79,5 +79,5 @@ ERC721Psi:
 | #5    |        |        |        |        |  68106 |
 
 ### Reference
-[ERC721 vs. ERC721A: Batch Minting NFTs by @thatguyintech](https://alchemy.com/blog/erc721-vs-erc721a-batch-minting-nfts)
-[ERC721Psi: A truly scalable NFT implementation for low-gas on-chain applications and randomized metadata generation.](https://medium.com/@medievaldao/erc721psi-a-truly-scalable-nft-standard-for-low-gas-on-chain-applications-and-randomized-metadata-c25c9e8ac8a8)
+- [ERC721 vs. ERC721A: Batch Minting NFTs by @thatguyintech](https://alchemy.com/blog/erc721-vs-erc721a-batch-minting-nfts)
+- [ERC721Psi: A truly scalable NFT implementation for low-gas on-chain applications and randomized metadata generation.](https://medium.com/@medievaldao/erc721psi-a-truly-scalable-nft-standard-for-low-gas-on-chain-applications-and-randomized-metadata-c25c9e8ac8a8)
