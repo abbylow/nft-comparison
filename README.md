@@ -1,4 +1,4 @@
-# Gas Comparison among ERC721, ERC721A, ERC1155
+# Gas Comparison among ERC721, ERC721A, ERC721Psi, ERC1155
 
 This project is mainly focused on measuring the gas costs for: 
 - OpenZeppelin `ERC721Enumerable`
